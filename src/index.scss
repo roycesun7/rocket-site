@@ -2,17 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Ibarra+Real+Nova:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+.base-styles {
+  @at-root {
+    body {
+      overflow-x: hidden;
+      background-color: black;
+      color: #ccc;
+    }
 
-@layer base{
-  body {
-    @apply overflow-x-hidden bg-black text-[#ccc]
-  }
-  * {
-    @apply m-0 m-auto p-0
-  }
-  .dropdown-submenu {
-    @apply absolute left-3/4 top-[-7px]
+    * {
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .dropdown-submenu {
+      position: absolute;
+      left: 75%; /* Equivalent to left-3/4 in Tailwind CSS */
+      top: -7px;
+    }
   }
 }
 
