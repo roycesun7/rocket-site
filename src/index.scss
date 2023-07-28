@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Ibarra+Real+Nova:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base{
+  body {
+    @apply overflow-x-hidden bg-black text-[#ccc]
+  }
+  * {
+    @apply m-0 m-auto p-0
+  }
+  .dropdown-submenu {
+    @apply absolute left-3/4 top-[-7px]
+  }
+}
+
+* {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.serif {
+  font-family: 'Ibarra Real Nova', serif;
+}
+
+
+.landing-title {
+  font-family: 'Inter', sans-serif;
+}
+
+span {
+  display: inline-block
+}
+
+.togglesvg {
+  z-index: 10000;
+}
+
+.dropdown {
+  left: 50%;
+}
+.dropdown.show {
+  display: block;
+}
+.dropdown-submenu {
+  left: 100%;
+}
+
+.anim:after{
+  background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    bottom: 10%;
+    left: 50%;
+    position: absolute;
+    background: blue;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.anim:hover:after {
+  width: 80%;
+  left: 10%;
+}
+
+.arrow-up:hover span {
+  animation: bounceup 2s infinite;
+}
+
+.arrow-right:hover span {
+  animation: bounceright 2s infinite;
+}
+
+.arrow-left:hover span {
+  animation: bounceleft 2s infinite;
+}
+
+.vvv {
+  z-index: -100
+}
+
+@keyframes bounceup {
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes bounceright {
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+}
+
+@keyframes bounceleft {
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-15px);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .mobileNav {
+    display: block;
+  }
+
+  .normalNav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .mobileNav {
+    display: none;
+  }
+
+  .normalNav {
+    display: block;
+  }
+}
